@@ -2,11 +2,11 @@
 import { Container } from "@bitnation-dev/components";
 import { IconArrowLeft } from "../components/icons";
 import { IconArrowRight } from "../components/icons";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
-const Portafolio = () => {
+const PortafolioComponent = () => {
     const searchParams = useSearchParams();
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [loading, setLoading] = useState(false);
@@ -270,6 +270,15 @@ const Portafolio = () => {
                 </div>
             </Container>
         </>
+    )
+}
+
+
+const Portafolio = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PortafolioComponent />
+        </Suspense>
     )
 }
 
