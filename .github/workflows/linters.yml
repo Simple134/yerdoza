@@ -1,0 +1,38 @@
+name: Code checks
+
+on: pull_request
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  jest:
+    name: Code checks
+    runs-on: ubuntu-22.04
+    env:
+      GESTIONO_API_KEY: ${{ secrets.GESTIONO_API_KEY }}
+      GESTIONO_API_SECRET: ${{ secrets.GESTIONO_API_SECRET }}
+      GESTIONO_API_URL: ${{ secrets.GESTIONO_API_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.10.0"
+      - name: Load environment variables
+        run: |
+          echo "GESTIONO_API_KEY=${{ secrets.GESTIONO_API_KEY }}" >> $GITHUB_ENV
+          echo "GESTIONO_API_SECRET=${{ secrets.GESTIONO_API_SECRET }}" >> $GITHUB_ENV
+          echo "GESTIONO_API_URL=${{ secrets.GESTIONO_API_URL }}" >> $GITHUB_ENV
+      - name: Install packages
+        run: yarn
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+      - name: ESLint Report
+        run: yarn lint
+      - name: Type check
+        run: yarn type
+      - name: Jest test
+        run: yarn test
+      - name: Application build
+        run: yarn build
