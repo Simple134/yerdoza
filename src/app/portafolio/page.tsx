@@ -72,17 +72,17 @@ const categorias = [
         ],
         slug: "estructuras"
     },
-    {
-        titulo: "PVC",
-        imagenes: [
-            "/Baños/banos1.jpg",
-            "/Baños/banos2.jpg",
-            "/Baños/banos3.jpg",
-            "/Baños/banos4.jpg",
-            "/Baños/banos5.jpg"
-        ],
-        slug: "pvc"
-    },
+    // {
+    //     titulo: "PVC",
+    //     imagenes: [
+    //         "/Baños/banos1.jpg",
+    //         "/Baños/banos2.jpg",
+    //         "/Baños/banos3.jpg",
+    //         "/Baños/banos4.jpg",
+    //         "/Baños/banos5.jpg"
+    //     ],
+    //     slug: "pvc"
+    // },
     {
         titulo: "Servicios Especiales",
         imagenes: [

@@ -2,7 +2,7 @@
 import { Container, Grid, Column } from "@bitnation-dev/components";
 import { motion } from "framer-motion"
 import { Button } from "./components/buttons";
-import CardComment from "./components/cardComment";
+//import CardComment from "./components/cardComment";
 import Card from "./components/card";
 import { useState } from 'react';
 import Image from "next/image";
@@ -51,11 +51,11 @@ export default function Home() {
       "image": "/Puertas/puertas2.jpg"
     }
   ]
-  const profileImage = [
-    "/Ellipse1.png",
-    "/Ellipse2.png",
-    "/Ellipse3.png",
-  ]
+  // const profileImage = [
+  //   "/Ellipse1.png",
+  //   "/Ellipse2.png",
+  //   "/Ellipse3.png",
+  // ]
 
   return (
     <div className="overflow-x-hidden w-full">
@@ -116,7 +116,7 @@ export default function Home() {
           </Link>
         </motion.div>
       </Container>
-      <Container className="mt-12 overflow-hidden ">
+      {/* <Container className="mt-12 overflow-hidden ">
         <motion.div className="inline-flex flex-nowrap space-x-4  w-full "
           initial={{
             opacity: 0
@@ -138,7 +138,7 @@ export default function Home() {
             <CardComment image={profileImage[index]} key={index} name="Nombre Del Cliente" comment="Yerdoza es una empresa que se encargo de manera completa en la fachada de un departamente realizado por nuestra compañia, muy agradecidos con ustedes." stars={5} />
           ))}
         </motion.div>
-      </Container>
+      </Container> */}
       <Container className="relative overflow-hidden w-full mt-12">
         <h1 className="md:text-center text-2xl font-bold text-black mb-8 lg:text-4xl wrap-balance">SERVICIOS DESTACADOS</h1>
         <div className="flex snap-x snap-mandatory overflow-x-auto overflow-y-hidden gap-4 w-full pb-4 scrollbar-thin ">
