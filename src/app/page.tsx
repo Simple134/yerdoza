@@ -16,9 +16,9 @@ export default function Home() {
   const router = useRouter();
 
   const categoryImages = {
-    cristaleria: ["/image5.png", "/image6.png", "/image7.png", "/image8.png", "/image9.png"],
-    ventanas: ["/image5.png", "/image6.png", "/image7.png", "/image8.png", "/image9.png"],
-    aluminio: ["/image5.png", "/image6.png", "/image7.png", "/image8.png", "/image9.png"]
+    cristaleria: ["/Puertas/puertas18.jpg", "/Puertas/puertas2.jpg", "/Puertas/puertas3.jpg", "/Closet/closet1.jpg", "/Closet/closet2.jpg"],
+    ventanas: ["/Ventanas/ventanas.jpg", "/Ventanas/ventanas2.png", "/Ventanas/ventanas3.jpg", "/Ventanas/ventanas4.jpg", "/Ventanas/ventanas5.jpg"],
+    aluminio: ["/Balcones/balcon1.jpg", "/Balcones/balcon2.jpg", "/Balcones/balcon3.jpg", "/Balcones/balcon4.jpg", "/Balcones/balcon5.jpg"]
   };
 
   // Obtener las imágenes de la categoría seleccionada
@@ -33,22 +33,22 @@ export default function Home() {
     {
       "title": "Ventanas",
       "description": "Ventanas europeas elegantes y funcionales, con sistemas innovadores de apertura y cierre, ideales para cualquier proyecto.",
-      "image": "/image1.png"
+      "image": "/Ventanas/ventanas3.jpg"
     },
     {
       "title": "Aluminio",
       "description": "Fabricación y montaje de estructuras de aluminio para cocinas, puertas, y closets, con durabilidad y estilo.",
-      "image": "/image2.png"
+      "image": "/Balcones/balcon1.jpg"
     },
     {
       "title": "Topes de Cocina",
       "description": "Topes de cocina en materiales naturales, que combinan belleza y funcionalidad.",
-      "image": "/image3.png"
+      "image": "/Cocina/cocina1.jpg"
     },
     {
       "title": "Cristaleria",
       "description": "Soluciones de cristalería para baños, balcones, escaleras y fachadas, con seguridad y diseño moderno.",
-      "image": "/image4.png"
+      "image": "/Puertas/puertas2.jpg"
     }
   ]
   const profileImage = [
@@ -61,7 +61,7 @@ export default function Home() {
     <div className="overflow-x-hidden w-full">
       <Container className="[&_.container-inside]:h-full  h-[25vh] md:h-[90vh]  mt-12"
         style={{
-          backgroundImage: `url(/image.png)`,
+          backgroundImage: `url(/Otros/otro4.jpg)`,
           backgroundSize: 'cover',
         }}>
         <motion.div className=" flex-col justify-center items-center h-full w-full hidden md:block"

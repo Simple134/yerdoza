@@ -5,14 +5,14 @@ import BitnationWrapper from "@/components/BitnationWrapper";
 import { motion } from "framer-motion";
 const Servicios = () => {
     const services = [
-        { title: "Ventanas", description: "Ofrecemos una variedad de ventanas europeas, diseñadas para combinar elegancia y funcionalidad, con sistemas de apertura y cierre innovadores para cualquier tipo de proyecto.", image: "/image10.png", list: ["Línea P40", "Oscilobatiente", "Abisagrada", "Proyectada", "Pibotante", "Línea P65", "P92", "Perimetral M100", "C70", "E100"] },
-        { title: "Aluminio", description: "Especialistas en la fabricación y montaje de estructuras de aluminio, nuestras soluciones son ideales para cocinas, puertas, closets y más, ofreciendo durabilidad y estilo.", image: "/image11.png", list: ["Cocinas", "Puertas", "Closets", "Carpintería", "Pergolado", "Aluminio en general"] },
-        { title: "Topes de Cocina", description: "Nuestros topes de cocina están disponibles en una variedad de materiales naturales, proporcionando belleza y funcionalidad a su espacio.", image: "/image12.png", list: ["Granito", "Cuarzo", "Mármol", "Piedras Naturales"] },
-        { title: "Acero Inoxidable", description: "Trabajos de alta calidad en acero inoxidable, ideales para barandas, pasamanos y todo tipo de estructuras que requieren resistencia y un acabado elegante.", image: "/image14.png", list: ["Baños", "Balcones", "Vidrios fijos", "Puertas", "Escaleras", "Fachadas flotantes", "Fachadas comerciales", "Canteo de cristales"] },
-        { title: "Cristalería", description: "Ofrecemos soluciones en cristalería para baños, balcones, escaleras y fachadas, con un enfoque en seguridad y diseño moderno.", image: "/image13.png", list: ["Barandas", "Pasamanos", "Todo tipo de estructura en acero inoxidable"] },
-        { title: "Estructuras en Sheetrock/Densglass", description: "Especialistas en la instalación de estructuras con materiales de alta calidad, proporcionando durabilidad y eficiencia en construcción.", image: "/image15.png", list: ["Sheetrock", "Densglass"] },
-        { title: "Trabajos en PVC", description: "Soluciones en PVC para diversas aplicaciones, ofreciendo resistencia y versatilidad para proyectos interiores y exteriores.", image: "/image16.png", list: [] },
-        { title: "Servicios Especiales en terminaciones", description: "Ofrecemos una gama de servicios adicionales para satisfacer las necesidades específicas de cada cliente, desde puertas personalizadas hasta sistemas de iluminación.", image: "/image17.png", list: ["Puertas con entablillado", "Fachada en aluminio", "Cercas", "Protectores", "Cortinas black out", "Permas", "Shutters", "Toldos", "Electricidad en general", "Iluminación", "Formaleta", "Pisos", "Plomería", "Plafones comerciales", "Pintura", "Alquiler de andamios"] },
+        { title: "Ventanas", description: "Ofrecemos una variedad de ventanas europeas, diseñadas para combinar elegancia y funcionalidad, con sistemas de apertura y cierre innovadores para cualquier tipo de proyecto.", image: "/Ventanas/ventanas.jpg", list: ["Línea P40", "Oscilobatiente", "Abisagrada", "Proyectada", "Pibotante", "Línea P65", "P92", "Perimetral M100", "C70", "E100"] },
+        { title: "Aluminio", description: "Especialistas en la fabricación y montaje de estructuras de aluminio, nuestras soluciones son ideales para cocinas, puertas, closets y más, ofreciendo durabilidad y estilo.", image: "/Balcones/balcon1.jpg", list: ["Cocinas", "Puertas", "Closets", "Carpintería", "Pergolado", "Aluminio en general"] },
+        { title: "Topes de Cocina", description: "Nuestros topes de cocina están disponibles en una variedad de materiales naturales, proporcionando belleza y funcionalidad a su espacio.", image: "/Cocina/cocina1.jpg", list: ["Granito", "Cuarzo", "Mármol", "Piedras Naturales"] },
+        { title: "Acero Inoxidable", description: "Trabajos de alta calidad en acero inoxidable, ideales para barandas, pasamanos y todo tipo de estructuras que requieren resistencia y un acabado elegante.", image: "/Balcones/balcon7.jpg", list: ["Baños", "Balcones", "Vidrios fijos", "Puertas", "Escaleras", "Fachadas flotantes", "Fachadas comerciales", "Canteo de cristales"] },
+        { title: "Cristalería", description: "Ofrecemos soluciones en cristalería para baños, balcones, escaleras y fachadas, con un enfoque en seguridad y diseño moderno.", image: "/Closet/closet1.jpg", list: ["Barandas", "Pasamanos", "Todo tipo de estructura en acero inoxidable"] },
+        { title: "Estructuras en Sheetrock/Densglass", description: "Especialistas en la instalación de estructuras con materiales de alta calidad, proporcionando durabilidad y eficiencia en construcción.", image: "/Fachada/facha1.jpg", list: ["Sheetrock", "Densglass"] },
+        { title: "Trabajos en PVC", description: "Soluciones en PVC para diversas aplicaciones, ofreciendo resistencia y versatilidad para proyectos interiores y exteriores.", image: "/Baños/banos1.jpg", list: [] },
+        { title: "Servicios Especiales en terminaciones", description: "Ofrecemos una gama de servicios adicionales para satisfacer las necesidades específicas de cada cliente, desde puertas personalizadas hasta sistemas de iluminación.", image: "/Cocina/cocina13.jpg", list: ["Puertas con entablillado", "Fachada en aluminio", "Cercas", "Protectores", "Cortinas black out", "Permas", "Shutters", "Toldos", "Electricidad en general", "Iluminación", "Formaleta", "Pisos", "Plomería", "Plafones comerciales", "Pintura", "Alquiler de andamios"] },
 
     ]
 
@@ -23,10 +23,12 @@ const Servicios = () => {
         <BitnationWrapper className="overflow-x-hidden">
             <Container className="h-[10vh] my-5 lg:h-[30vh] lg:my-10"
                 style={{
-                    backgroundImage: `url(/image.png)`,
+                    backgroundImage: `url(/Fachada/facha7.jpg)`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
+                    width: '100vw',
+
                 }}>
                 <motion.div className="flex flex-col  justify-center items-center lg:h-[20vh] "
                     initial={{

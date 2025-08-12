@@ -3,8 +3,98 @@ import { Container } from "@bitnation-dev/components";
 import { IconArrowLeft } from "../components/icons";
 import { IconArrowRight } from "../components/icons";
 import { useState, useEffect, Suspense } from "react";
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+
+const categorias = [
+    {
+        titulo: "Ventanas",
+        imagenes: [
+            "/Ventanas/ventanas.jpg",
+            "/Ventanas/ventanas2.png",
+            "/Ventanas/ventanas3.jpg",
+            "/Ventanas/ventanas4.jpg",
+            "/Ventanas/ventanas5.jpg"
+        ],
+        slug: "ventanas"
+    },
+    {
+        titulo: "Aluminio",
+        imagenes: [
+            "/Balcones/balcon1.jpg",
+            "/Balcones/balcon2.jpg",
+            "/Balcones/balcon3.jpg",
+            "/Balcones/balcon4.jpg",
+            "/Balcones/balcon5.jpg"
+        ],
+        slug: "aluminio"
+    },
+    {
+        titulo: "Topes de Cocina",
+        imagenes: [
+            "/Cocina/cocina1.jpg",
+            "/Cocina/cocina2.jpg",
+            "/Cocina/cocina3.jpg",
+            "/Cocina/cocina4.jpg",
+            "/Cocina/cocina5.jpg"
+        ],
+        slug: "topes"
+    },
+    {
+        titulo: "Acero Inoxidable",
+        imagenes: [
+            "/Balcones/balcon7.jpg",
+            "/Balcones/balcon8.jpg",
+            "/Balcones/balcon9.jpg",
+            "/Balcones/balcon10.jpg",
+            "/Balcones/balcon11.jpg"
+        ],
+        slug: "acero"
+    },
+    {
+        titulo: "Cristaleria",
+        imagenes: [
+            "/Closet/closet1.jpg",
+            "/Closet/closet2.jpg",
+            "/Closet/closet3.jpg",
+            "/Closet/closet4.jpg",
+            "/Closet/closet5.jpg"
+        ],
+        slug: "cristaleria"
+    },
+    {
+        titulo: "Estructuras ",
+        imagenes: [
+            "/Fachada/facha1.jpg",
+            "/Fachada/facha2.jpg",
+            "/Fachada/facha3.jpg",
+            "/Fachada/facha4.jpg",
+            "/Fachada/facha5.jpg"
+        ],
+        slug: "estructuras"
+    },
+    {
+        titulo: "PVC",
+        imagenes: [
+            "/Baños/banos1.jpg",
+            "/Baños/banos2.jpg",
+            "/Baños/banos3.jpg",
+            "/Baños/banos4.jpg",
+            "/Baños/banos5.jpg"
+        ],
+        slug: "pvc"
+    },
+    {
+        titulo: "Servicios Especiales",
+        imagenes: [
+            "/Puertas/puertas1.jpg",
+            "/Puertas/puertas2.jpg",
+            "/Puertas/puertas3.jpg",
+            "/Puertas/puertas4.jpg",
+            "/Puertas/puertas5.jpg"
+        ],
+        slug: "servicios"
+    },
+];
 
 const PortafolioComponent = () => {
     const searchParams = useSearchParams();
@@ -12,121 +102,32 @@ const PortafolioComponent = () => {
     const [loading, setLoading] = useState(false);
     const [mounted, setMounted] = useState(false);
     const [selectedItem, setSelectedItem] = useState(0);
-
-    const categorias = [
-        {
-            titulo: "Ventanas",
-            imagenes: [
-                "/image/ventanas/1.png",
-                "/image/ventanas/2.png",
-                "/image/ventanas/3.png",
-                "/image/ventanas/4.png",
-                "/image/ventanas/5.png"
-            ],
-            slug: "ventanas"
-        },
-        {
-            titulo: "Aluminio",
-            imagenes: [
-                "/image/aluminio/1.png",
-                "/image/aluminio/2.png",
-                "/image/aluminio/3.png",
-                "/image/aluminio/4.png",
-                "/image/aluminio/5.png"
-            ],
-            slug: "aluminio"
-        },
-        {
-            titulo: "Topes de Cocina",
-            imagenes: [
-                "/image/topes/1.png",
-                "/image/topes/2.png",
-                "/image/topes/3.png",
-                "/image/topes/4.png",
-                "/image/topes/5.png"
-            ],
-            slug: "topes"
-        },
-        {
-            titulo: "Acero Inoxidable",
-            imagenes: [
-                "/image/acero/1.png",
-                "/image/acero/2.png",
-                "/image/acero/3.png",
-                "/image/acero/4.png",
-                "/image/acero/5.png"
-            ],
-            slug: "acero"
-        },
-        {
-            titulo: "Cristaleria",
-            imagenes: [
-                "/image/cristaleria/1.png",
-                "/image/cristaleria/2.png",
-                "/image/cristaleria/3.png",
-                "/image/cristaleria/4.png",
-                "/image/cristaleria/5.png"
-            ],
-            slug: "cristaleria"
-        },
-        {
-            titulo: "Estructuras ",
-            imagenes: [
-                "/image/densglass/1.png",
-                "/image/densglass/2.png",
-                "/image/densglass/3.png",
-                "/image/densglass/4.png",
-                "/image/densglass/5.png"
-            ],
-            slug: "estructuras"
-        },
-        {
-            titulo: "PVC",
-            imagenes: [
-                "/image/pvc/1.png",
-                "/image/pvc/2.png",
-                "/image/pvc/3.png",
-                "/image/pvc/4.png",
-                "/image/pvc/5.png"
-            ],
-            slug: "pvc"
-        },
-        {
-            titulo: "Servicios Especiales",
-            imagenes: [
-                "/image/servicios/1.png",
-                "/image/servicios/2.png",
-                "/image/servicios/3.png",
-                "/image/servicios/4.png",
-                "/image/servicios/5.png"
-            ],
-            slug: "servicios"
-        },
-    ];
     
     useEffect(() => {
         setMounted(true);
-        
-        // Verificar si hay una categoría en los parámetros de búsqueda
+    }, []);
+
+    useEffect(() => {
         const categoryParam = searchParams.get('category');
         if (categoryParam) {
-            // Encontrar el índice de la categoría
             const categoryIndex = categorias.findIndex(cat => cat.slug === categoryParam);
             if (categoryIndex !== -1) {
                 setSelectedItem(categoryIndex);
             } else {
-                // Por defecto, mostrar Cristalería si no se encuentra la categoría
                 const cristaleriaCategoryIndex = categorias.findIndex(cat => cat.slug === 'cristaleria');
                 setSelectedItem(cristaleriaCategoryIndex !== -1 ? cristaleriaCategoryIndex : 0);
             }
         } else {
-            // Por defecto, mostrar Cristalería
             const cristaleriaCategoryIndex = categorias.findIndex(cat => cat.slug === 'cristaleria');
             setSelectedItem(cristaleriaCategoryIndex !== -1 ? cristaleriaCategoryIndex : 0);
         }
-        
+
         setCurrentImageIndex(0);
-    }, [searchParams, categorias]);
+    }, [searchParams]);
+
+    useEffect(() => {
+        setCurrentImageIndex(0);
+    }, [selectedItem]);
 
     if (!mounted) {
         return null;
@@ -172,14 +173,11 @@ const PortafolioComponent = () => {
                                             key={imgIndex} 
                                             className="snap-center flex-none w-full h-full shrink-0"
                                         >
-                                            <Image 
+                                            <img 
                                                 src={imagen}
                                                 alt={`${categorias[selectedItem]?.titulo} imagen ${imgIndex + 1}`}
-                                                width={800}
-                                                height={600}
                                                 className="object-cover w-full h-full"
                                                 onLoad={handleImageLoad}
-                                                priority={imgIndex === 0}
                                             />
                                         </div>
                                     ))}
@@ -202,14 +200,11 @@ const PortafolioComponent = () => {
                                     <div className="w-full h-full bg-gray-200 animate-pulse"></div>
                                 ) : (
                                     imagenesCategoriaActual.length > 0 && (
-                                        <Image
+                                        <img
                                             src={imagenesCategoriaActual[currentImageIndex]}
                                             alt={`${categorias[selectedItem]?.titulo} imagen ${currentImageIndex + 1}`}
-                                            width={1200}
-                                            height={800}
                                             className="object-cover w-full h-full"
-                                            onLoadingComplete={handleImageLoad}
-                                            priority
+                                            onLoad={handleImageLoad}
                                         />
                                     )
                                 )}
@@ -234,11 +229,9 @@ const PortafolioComponent = () => {
                                             }`}
                                             onClick={() => setCurrentImageIndex(imgIndex)}
                                         >
-                                            <Image 
+                                            <img 
                                                 src={imagen}
                                                 alt={`${categorias[selectedItem]?.titulo} miniatura ${imgIndex + 1}`}
-                                                width={144}
-                                                height={144}
                                                 className="object-cover w-full h-full"
                                             />
                                         </div>
