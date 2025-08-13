@@ -2,7 +2,7 @@
 import { Container } from "@bitnation-dev/components";
 import { IconArrowLeft } from "../components/icons";
 import { IconArrowRight } from "../components/icons";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 const categorias = [
@@ -102,6 +102,7 @@ const PortafolioComponent = () => {
     const [loading, setLoading] = useState(false);
     const [mounted, setMounted] = useState(false);
     const [selectedItem, setSelectedItem] = useState(0);
+    const mobileScrollRef = useRef<HTMLDivElement | null>(null);
     
     useEffect(() => {
         setMounted(true);
@@ -127,6 +128,9 @@ const PortafolioComponent = () => {
 
     useEffect(() => {
         setCurrentImageIndex(0);
+        if (mobileScrollRef.current) {
+            mobileScrollRef.current.scrollTo({ left: 0, behavior: 'auto' });
+        }
     }, [selectedItem]);
 
     if (!mounted) {
@@ -166,7 +170,7 @@ const PortafolioComponent = () => {
                     <div className="flex flex-col space-y-2 w-full h-full ">
                         {/* Versión móvil: Slider táctil sin botones */}
                         <div className="block lg:hidden w-full">
-                            <div className="overflow-x-auto touch-pan-x snap-x snap-mandatory scrollbar-hide w-full">
+                            <div ref={mobileScrollRef} className="overflow-x-auto touch-pan-x snap-x snap-mandatory scrollbar-hide w-full">
                                 <div className="flex h-[50vh]">
                                     {imagenesCategoriaActual.map((imagen, imgIndex) => (
                                         <div 
@@ -250,7 +254,9 @@ const PortafolioComponent = () => {
                             className={`cursor-pointer flex items-center gap-2 ${
                                 selectedItem === index ? 'text-[#D60B41]' : 'text-white'
                             }`}
-                            onClick={() => setSelectedItem(index)}
+                            onClick={() => 
+                                    setSelectedItem(index)
+                            }
                         >
                             {selectedItem === index && (
                                 <span className={`h-2 w-2 rounded-full inline-block ${

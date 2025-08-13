@@ -26,7 +26,7 @@ const ServiceCard = ({ title, description, image, list, reversed }: {
                 </div>
                 <div className="w-full h-full">
                     <div className="h-[300px] sm:h-full">
-                        <img src={image} alt={title} className="object-cover w-full h-96" />
+                        <img src={image} alt={title} className="object-cover w-full h-full lg:h-96" />
                     </div>
                 </div>
             </Grid>
@@ -40,7 +40,7 @@ const ServiceCard = ({ title, description, image, list, reversed }: {
         <Grid columns={{ xl: 2, lg: 2, md: 1, sm: 1 }} className="lg:!gap-12 lg:my-10">
             <div className="w-full h-full flex lg:justify-end lg:pr-12">
                 <div className="h-[300px] sm:h-full w-full">
-                    <img src={image} alt={title} className="object-cover w-full h-96" />
+                    <img src={image} alt={title} className="object-cover w-full h-full lg:h-96" />
                 </div>
             </div>
             <div className="flex flex-col lg:mr-12">

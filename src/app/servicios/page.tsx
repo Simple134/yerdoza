@@ -81,7 +81,7 @@ const Servicios = () => {
                 </div> 
             </Container>
             <Container className="flex flex-col justify-center items-center w-full h-[35vh] bg-black">
-                <motion.div className="text-center font-bold text-white mb-8 uppercase wrap-pretty lg:text-4xl"
+                <motion.div className="text-center font-bold text-white mb-8 uppercase wrap-pretty text-3xl lg:text-4xl"
                     initial={{
                         opacity: 0,
                         y: -100

@@ -3,9 +3,9 @@ import { Container, Grid } from "@bitnation-dev/components";
 import { motion } from "motion/react";
 const HelpInfo = ({ onSubmit }: { onSubmit?: () => void }) => {
     return (
-        <Container className="w-full space-y-4 mb-16">
+        <Container className="w-full space-y-4 lg:mb-16">
             <Grid columns={{ xl: 2, lg: 2, md: 1, sm: 1 }} className="!gap-2">
-                <motion.div className=" w-full px-4 h-full space-y-4 "
+                <motion.div className=" w-full px-0 lg:px-4 h-full space-y-4 "
                                     initial={{
                                         opacity: 0,
                                         x: -100
@@ -49,7 +49,7 @@ const HelpInfo = ({ onSubmit }: { onSubmit?: () => void }) => {
                     </button>
 
                 </motion.div>
-                <motion.div className="flex flex-col space-y-2 w-full px-4"
+                <motion.div className="flex flex-col space-y-2 w-full px-0 lg:px-4"
                                                         initial={{
                                                             opacity: 0,
                                                             x: 100

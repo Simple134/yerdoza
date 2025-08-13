@@ -61,7 +61,7 @@ export default function Home() {
     <div className="overflow-x-hidden w-full">
       <Container className="[&_.container-inside]:h-full  h-[25vh] md:h-[90vh]  mt-12"
         style={{
-          backgroundImage: `url(/Otros/otro4.jpg)`,
+          backgroundImage: `url(/Fachada/facha38.jpg)`,
           backgroundSize: 'cover',
         }}>
         <motion.div className=" flex-col justify-center items-center h-full w-full hidden md:block"
@@ -166,7 +166,7 @@ export default function Home() {
         </div>
       </Container>
       <Container className="flex justify-center items-center w-full h-[45vh] bg-[#D60B41] overflow-hidden my-0 md:my-12">
-        <motion.div className="flex flex-col w-[70%] items-center justify-center text-center font-bold text-white mb-8 uppercase wrap-pretty lg:text-4xl text-xl mx-auto"
+        <motion.div className="flex flex-col lg:w-[70%] w-full items-center justify-center text-center font-bold text-white mb-8 uppercase wrap-pretty lg:text-4xl text-xl mx-auto"
           initial={{
             opacity: 0,
             y: -100
@@ -185,7 +185,7 @@ export default function Home() {
           }}
           style={{ willChange: "transform", overflow: "hidden" }}
         >
-          <h1>somos Tu aliado estratégico para  <span className="text-black"> terminaciones </span> de calidad superior</h1>
+          <h1 className="text-center text-4xl font-bold mb-4 lg:mb-8">somos Tu aliado estratégico para  <span className="text-black"> terminaciones </span> de calidad superior</h1>
         </motion.div>
 
         <Link href="/contactos" className="flex  justify-center w-full ">
@@ -195,9 +195,9 @@ export default function Home() {
         </Link>
 
       </Container>
-      <Container className=" overflow-hidden my-0 md:my-16">
-        <h1 className="text-center text-4xl font-bold text-black mb-8">PROYECTOS RECIENTES</h1>
-        <div className="flex md:flex-row justify-between w-1/2 items-center mx-auto">
+      <Container className=" overflow-hidden my-6 md:my-16">
+        <h1 className="text-center text-3xl md:text-4xl font-bold text-black mb-4 lg:mb-8">PROYECTOS RECIENTES</h1>
+        <div className="flex md:flex-row justify-between w-full lg:w-1/2  items-center mx-auto">
           <div className="flex flex-col items-center mb-2">
             <div
               onClick={() => setSelectedItem('cristaleria')}

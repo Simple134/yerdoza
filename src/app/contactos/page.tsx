@@ -42,12 +42,12 @@ const Contactos = () => {
         <HelpInfo onSubmit={() => {}} />
       </Container>
       <Container
-        className="h-[50vh] my-5 lg:h-[60vh] lg:my-10"
+        className="h-[50vh] my-5 lg:h-[60vh] lg:my-10 bg-contain lg:bg-cover"
         style={{
           backgroundImage: `url(/Otros/otro4.jpg)`,
-          backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          width: "100vw",
         }}
       ></Container>
       <Container className="pb-10">
